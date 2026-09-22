@@ -1,44 +1,44 @@
-async function carregarProduto() {
-
+async function carregarProdutos() {
     const listaProdutos = document.getElementById("lista-produtos");
 
     try {
-
         const resposta = await fetch("/api/produtos");
 
         if (!resposta.ok) {
-            throw new Error("Erro ao buscar o produto.");
+            throw new Error("Erro ao buscar os produtos.");
         }
 
-        const produto = await resposta.json();
+        const produtos = await resposta.json();
 
-        listaProdutos.innerHTML = `
-            <div class="card">
+        listaProdutos.innerHTML = "";
 
-                <h2>${produto.nome}</h2>
+        produtos.forEach((produto) => {
+            listaProdutos.innerHTML += `
+                <div class="card">
 
-                <p>
-                    <strong>Categoria:</strong>
-                    ${produto.categoria}
-                </p>
+                    <img
+                        src="${produto.imagem}"
+                        alt="Produto gamer"
+                        class="produto-imagem"
+                    >
 
-                <p class="preco">
-                    R$ ${produto.preco.toFixed(2).replace(".", ",")}
-                </p>
+                    <p class="preco">
+                        R$ ${produto.preco.toFixed(2).replace(".", ",")}
+                    </p>
 
-            </div>
-        `;
+                </div>
+            `;
+        });
 
     } catch (erro) {
-
         console.error(erro);
 
         listaProdutos.innerHTML = `
             <p class="erro">
-                Erro ao carregar o produto.
+                Erro ao carregar os produtos.
             </p>
         `;
     }
 }
 
-carregarProduto();
+carregarProdutos();
