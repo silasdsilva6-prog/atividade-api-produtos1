@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #222;
+}
+
+header {
+    background-color: #2563eb;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+main {
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+#lista-produtos {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    color: #2563eb;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.preco {
+    color: #16a34a;
+    font-size: 24px !important;
+    font-weight: bold;
+}
+
+.erro {
+    color: #dc2626;
+    font-weight: bold;
+}
